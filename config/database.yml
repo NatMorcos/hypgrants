@@ -14,7 +14,7 @@ development:
   reconnect: false
   database: hypgrants_development
   pool: 5
-  username: hypgrants
+  username: root
   password:
   host: localhost
 
@@ -27,7 +27,7 @@ test:
   reconnect: false
   database: hypgrants_test
   pool: 5
-  username: hypgrants
+  username: root
   password:
   host: localhost
 
@@ -37,6 +37,6 @@ production:
   reconnect: false
   database: hypgrants_production
   pool: 5
-  username: hypgrants
+  username: root
   password:
   host: localhost

@@ -1,0 +1,5 @@
+%h1 Here are all the submissions, linked on ID and title
+
+- @submissions.each do |sub|
+  %p
+    = link_to "##{sub.id},\"#{sub.title}\"", submission_path(id: sub.id)
