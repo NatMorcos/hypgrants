@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171210235046) do
+ActiveRecord::Schema.define(version: 20171214040730) do
+
+  create_table "grants", force: :cascade do |t|
+    t.string   "title",                limit: 255
+    t.decimal  "amount",                           precision: 10
+    t.datetime "submissions_open_at"
+    t.datetime "submissions_close_at"
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+  end
 
   create_table "submissions", force: :cascade do |t|
     t.string   "title",       limit: 255
