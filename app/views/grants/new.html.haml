@@ -1,0 +1,14 @@
+%h1 Grant Creation Form
+
+%p hello !!!
+
+/ = form_with scope: :submission, local: true do |f|
+/   = f.label 
+/ = simple_form_for @submission,  html: { class: 'form-horizontal' }) do |f|
+= simple_form_for :grant, url: grants_path do |f|
+  = f.input :title, label: "Title, please"
+  = f.input :amount, as: :decimal
+  = f.input :submissions_open_at, as: :datetime
+  = f.input :submissions_close_at, as: :datetime
+  = f.button :submit
+

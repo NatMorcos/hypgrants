@@ -5,6 +5,7 @@ class SubmissionsController < ApplicationController
   end
 
   def show
+    #TODO: protect this
     @submission = Submission.find(params[:id])
   end   
 

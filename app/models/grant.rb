@@ -3,6 +3,7 @@ class Grant < ActiveRecord::Base
   validates :title, presence: true, uniqueness: { message: "There is already a grant by this name" }
   validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :submissions_close_at, :submissions_open_at, presence: true
+ 
   validate :valid_submission_window
 
   def self.submissions_open
@@ -19,7 +20,7 @@ class Grant < ActiveRecord::Base
     if submissions_close_at <= submissions_open_at
       errors.add(:submissions_close_at, "End date must be after start date")
     end
-    if submission_close_at <= DateTime.now
+    if submissions_close_at <= DateTime.now
       errors.add(:submission_close_at, "End date must be in the future")
     end
   end

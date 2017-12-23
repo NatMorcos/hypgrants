@@ -1,4 +1,8 @@
-%h1 Registration is open
+- if @grants_open
+  %h1 Registration is open
+- else
+  %h1 Registration is closed
+
 %p 
   = link_to "create a submission", new_submission_path
 %p 
