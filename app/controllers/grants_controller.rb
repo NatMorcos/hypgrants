@@ -10,6 +10,7 @@ class GrantsController < ApplicationController
   end
 
   def new
+    @grant = Grant.new
   end
 
   def create

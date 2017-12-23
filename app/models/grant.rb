@@ -21,7 +21,7 @@ class Grant < ActiveRecord::Base
       errors.add(:submissions_close_at, "End date must be after start date")
     end
     if submissions_close_at <= DateTime.now
-      errors.add(:submission_close_at, "End date must be in the future")
+      errors.add(:submissions_close_at, "End date must be in the future")
     end
   end
 
