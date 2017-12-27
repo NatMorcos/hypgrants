@@ -1,6 +1,10 @@
 class HomeController < ApplicationController
   def index
-    # @grants_open = Grant.submissions_open.any?
-    @grants_open = true #Grant.submissions_open.any?
+    @signed_in = user_signed_in?
+    @current_user = current_user
+    @user_session = user_session
+
+
+    @open_grants = Grant.submissions_open
   end
 end

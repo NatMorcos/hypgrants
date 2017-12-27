@@ -1,9 +1,26 @@
-- if @grants_open
+- if @signed_in
+
+  %h2 current user
+  %pre
+    = @current_user
+
+  %h2 user session
+  %pre
+    = @user_session
+
+%br
+
+- if @open_grants.any?
   %h1 Registration is open
+  %h3 The following Grants are open:
+  %ul
+    - @open_grants.each do |grant|
+      %li= grant.title
+  %br
+  %p 
+    = link_to "create a submission", new_submission_path
+  %p 
+    = link_to "see all submissions", submissions_path
 - else
   %h1 Registration is closed
 
-%p 
-  = link_to "create a submission", new_submission_path
-%p 
-  = link_to "see all submissions", submissions_path

@@ -7,10 +7,6 @@ Rails.application.routes.draw do
 
   # get 'grant/index'
 
-  # get 'grant/new'
-
-  # get 'grant/create'
-
   get 'home/index'
   root 'home#index'
   

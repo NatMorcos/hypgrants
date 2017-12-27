@@ -1,6 +1,9 @@
 class GrantsController < ApplicationController
   #TODO: protect this controller
 
+  before_action :authenticate_user!
+  # before_action :verify_admin
+
   def index
   end
 
@@ -33,4 +36,12 @@ class GrantsController < ApplicationController
       :submissions_close_at
     )
   end
+
+  private
+
+  # def verify_admin
+  #   # render status :forbidden and return
+  #   redirect_to 
+  # end
+
 end
