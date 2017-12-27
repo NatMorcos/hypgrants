@@ -31,9 +31,9 @@ class GrantsController < ApplicationController
   def grant_params
     params.require(:grant).permit(
       :title,
-      :amount,
-      :submissions_open_at,
-      :submissions_close_at
+      :total_amount,
+      :submission_min, :submission_max,
+      :submissions_open_at, :submissions_close_at
     )
   end
 
