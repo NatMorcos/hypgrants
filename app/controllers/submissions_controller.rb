@@ -9,6 +9,10 @@ class SubmissionsController < ApplicationController
     @submission = Submission.find(params[:id])
   end   
 
+  def pre_registration_info
+    @open_grants = Grant.submissions_open
+  end
+
   def new
     @submission = Submission.new
   end

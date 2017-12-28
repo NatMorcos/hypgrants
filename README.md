@@ -1,3 +1,22 @@
+TODO:
+
+- auth layer
+  - admin sign in <=
+  - artist sign in
+
+
+- GRANT APPLICATION PROCESS
+
+  -> read intro page
+  -> create artist profile ==> create user object
+  -> link to grant
+  -> Questions model ?????
+  -> attachements
+
+
+
+
+
 Hypgrants
 ================
 

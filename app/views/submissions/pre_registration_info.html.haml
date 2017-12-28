@@ -1,0 +1,55 @@
+%h1 Hyperborea 2017 Art Grant Application Form
+
+%p Welcome to the first ever arts grant application for Hyperborea! We're super excited to be sharing this vision of connection and community and creation with you. We are a brand new event, with big dreams, and fresh faces, and we're stoked that you're thinking of joining us.
+
+%p A rich offering of art is the keystone of Hyperborea, and we are pleased to offer our community the following grant options to help bring your imaginings to reality.  Given the newness of our event, this year we are expecting an open ended and experimental variety of submissions. We want to give every one the chance to pARTicipate regardless of how big or small your dream: don't be afraid to break ground.  
+
+%h2 GRANT OPTIONS
+%ul
+  - @open_grants.each do |grant| 
+    - if grant.submission_amount_range.present?
+      %li= "#{grant.title} - #{grant.submission_amount_range}"
+    - else
+      %li= "#{grant.title}"
+
+
+%h2 TIMELINE
+-# tODO: load these in dynamically off Grant
+-# TODO: we need to add these fields to grant
+%ul
+  %li APPLICATION DUE DATE: March 24th
+  %li Grant Award: April 3rd
+  %li Build Plan Due Date: May 8th
+  %li Gates Open: May 19th 
+
+%p Please note that the intention of these deadlines is to give us enough time to make this event happen. If you miss the deadline, please feel free to still submit an application however we do not guarantee it will be reviewed. 
+
+%h2 ASSESSMENT CRITERIA
+%p Your application will be anonymously reviewed based on the following criteria: 
+%ol
+  %li Creativity - how original, interesting, relevant, daring, magical, thought provoking is your idea? 
+  %li Constructability - what is the feasibility of your project? will you be able to build it within the timeline and budget?
+  %li Completeness - how well thought out is your project? how complete is your materials list, safety plan, moop plan?
+  %li Opportunity for Growth - given that this is our first year, we are prioritizing projects that have the ability to grow from year to year. If your project is too big for this timeline, we're happy to fund a portion of its construction. 
+
+%p Please note that applications for the Effigy grant are expected to fit within our theme: BREAKING GROUND. While we would be thrilled if your project were to fit within our theme, it is not a requirement for Large and Small project grants. 
+
+%h2 DISBURSEMENT
+%p Should you be selected, you will receive 75% of your grant upon award, and the other 25% upon completion of the project. 
+
+%h2 ADDITIONAL SUBMISSION MATERIALS
+%p Please send your supporting documents to art@tohyperborea.ca and feel free to reach out if you have any questions. 
+
+%h2 Things to remember: 
+%p
+  BE RADICALLY SELF RELIANT 
+  %br
+  BE RADICALLY EXPRESSIVE 
+  %br
+  BE RADICALLY INCLUSIVE 
+  %br
+  HAVE A DAMN GOOD TIME
+  %br
+
+%hr
+=link_to "Continue to Application", new_submission_path, html_options: {class: "button"}

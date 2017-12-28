@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'home/index'
   root 'home#index'
   
+  get 'submissions/pre_registration_info'
   resources :submissions
 
   resources :grants
