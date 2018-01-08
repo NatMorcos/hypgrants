@@ -15,22 +15,24 @@ This application requires:
 
 Getting Started
 ---------------
-bundle install
-bundle exec rake db:setup
-bundle exec rake db:migrate
-
+```
+$ bundle install
+$ bundle exec rake db:setup
+$ bundle exec rake db:migrate
+```
 
 Documentation and Support
 -------------------------
 
 Issues
 -------------
-
+Phase One:
+https://github.com/NatMorcos/hypgrants/projects/1
 
 Deployment
 ----------
 - need imagemagick and ghost script
 - need file storage sym linked see: https://github.com/thoughtbot/paperclip#deployment
-Setup for Heroku right now probably moving to capistrano
+- Setup for Heroku right now probably moving to capistrano
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
