@@ -1,4 +1,5 @@
 class Grant < ActiveRecord::Base
+  has_many :submissions, through: :grant_submissions
 
   validates :title, presence: true, uniqueness: { message: "There is already a grant by this name" }
   validates :total_amount, presence: true, numericality: { greater_than: 0 }

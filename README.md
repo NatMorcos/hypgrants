@@ -11,6 +11,7 @@ This application requires:
 
 - Ruby 2.2.4
 - Rails 4.2.7.1
+- MySQL 5.7.8+ (JSON support)
 
 
 Getting Started

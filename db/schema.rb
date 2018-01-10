@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171227225352) do
+ActiveRecord::Schema.define(version: 20180110052945) do
+
+  create_table "grant_submissions", force: :cascade do |t|
+    t.integer  "grant_id",      limit: 4
+    t.integer  "submission_id", limit: 4
+    t.string   "status",        limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "grants", force: :cascade do |t|
     t.string   "title",                limit: 255
@@ -24,12 +32,14 @@ ActiveRecord::Schema.define(version: 20171227225352) do
     t.decimal  "submission_max",                   precision: 10
   end
 
-  create_table "submissions", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+  create_table "seed_migration_data_migrations", force: :cascade do |t|
+    t.string   "version",     limit: 255
+    t.integer  "runtime",     limit: 4
+    t.datetime "migrated_on"
   end
+
+# Could not dump table "submissions" because of following StandardError
+#   Unknown type 'json' for column 'data'
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
