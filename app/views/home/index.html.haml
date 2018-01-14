@@ -1,26 +1,43 @@
 - if @signed_in
-
-  %h2 current user
-  %pre
-    = @current_user
-
-  %h2 user session
-  %pre
-    = @user_session
+  - if @current_user.artist?
+    %p hello! You're signed in as an artist.
+    %p Here are your saved submissions:
+    %ul
+      -# @current_user.submissions.each do |submission|
+      -#= submission.title #TODO: view, edit
+      %li TODO :)
+  - elsif @current_user.admin?
+    %p hello! You're signed in as an admin.
+    %p You can:
+    %ul
+      %li= link_to "create a grant", new_grant_path
+      %li= link_to "manage grants", grants_path
+- else
+  %h2 For existing account holders
+  %p= link_to "artist login", user_session_path
+  %p= link_to "admin login", user_session_path
 
 %br
 
+%h3 Grant Status:
 - if @open_grants.any?
-  %h1 Registration is open
-  %h3 The following Grants are open:
+  %h2 Registration is open
+  %p The following Grants are open:
   %ul
     - @open_grants.each do |grant|
       %li= grant.title
   %br
-  %p 
-    = link_to "create a submission", submissions_pre_registration_info_path
-  %p 
-    = link_to "see all submissions", submissions_path
+  - if @signed_in && @current_user.artist?
+    %p
+      TODO: check that the user is confirmed
+      %br
+      looks like you're already signed in with an artist account. Do you want to
+      = link_to "create a new submission", submissions_pre_registration_info_path
+      ?
+  - else
+    %p
+      = link_to "Register as an artist", new_user_registration_path
+      in order to submit an application.
 - else
-  %h1 Registration is closed
+  %h2 Registration is closed
 
