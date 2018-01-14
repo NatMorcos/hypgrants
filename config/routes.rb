@@ -7,15 +7,13 @@ Rails.application.routes.draw do
 
   # get 'grant/index'
 
-  get 'home/index'
   root 'home#index'
-  
-  get 'submissions/pre_registration_info'
-  resources :submissions
 
+  get 'home/index'
+  get 'submissions/pre_registration_info'
+
+  resources :submissions
   resources :grants
 
-
-  devise_for :users
-
+  devise_for :users, :controllers => { registrations: 'registrations' }
 end
