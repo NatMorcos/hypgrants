@@ -19,7 +19,10 @@ Getting Started
 ```
 $ bundle install
 $ bundle exec rake db:setup
+$ bundle exec rake seed_migration:install:migrations
+
 $ bundle exec rake db:migrate
+# bundle exec rake seed:migrate
 ```
 
 Documentation and Support
