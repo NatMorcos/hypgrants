@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180114223330) do
+ActiveRecord::Schema.define(version: 20180114234407) do
 
   create_table "grant_submissions", force: :cascade do |t|
     t.integer  "grant_id",      limit: 4
