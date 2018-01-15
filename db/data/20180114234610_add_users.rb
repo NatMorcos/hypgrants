@@ -7,7 +7,7 @@ class AddUsers < SeedMigration::Migration
       {email: "rehanna.dk@gmail.com"}
     ]
     admins.each do |admin_details|
-      admin_details.merge!({password: "Password123", role: 0})
+      admin_details.merge!({password: "Password123", role: :admin})
       create_confirmed_user(admin_details)
     end
 
