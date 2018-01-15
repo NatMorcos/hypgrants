@@ -12,13 +12,13 @@
 
 ActiveRecord::Base.transaction do
 
-  Grant.create({"created_at"=>"2018-01-14T23:20:56.000Z", "submission_max"=>200, "submission_min"=>100, "submissions_close_at"=>"2018-03-31T00:00:00.000Z", "submissions_open_at"=>"2018-01-01T00:00:00.000Z", "title"=>"Small Grant", "total_amount"=>1000, "updated_at"=>"2018-01-14T23:20:56.000Z"})
+  Grant.create({"created_at"=>"2018-01-15T00:18:43.000Z", "submission_max"=>200, "submission_min"=>100, "submissions_close_at"=>"2018-03-31T00:00:00.000Z", "submissions_open_at"=>"2018-01-01T00:00:00.000Z", "title"=>"Small Grant", "total_amount"=>1000, "updated_at"=>"2018-01-15T00:18:43.000Z"})
 
-  Grant.create({"created_at"=>"2018-01-14T23:20:56.000Z", "submission_max"=>700, "submission_min"=>500, "submissions_close_at"=>"2018-03-31T00:00:00.000Z", "submissions_open_at"=>"2018-01-01T00:00:00.000Z", "title"=>"Large Grant", "total_amount"=>2000, "updated_at"=>"2018-01-14T23:20:56.000Z"})
+  Grant.create({"created_at"=>"2018-01-15T00:18:43.000Z", "submission_max"=>700, "submission_min"=>500, "submissions_close_at"=>"2018-03-31T00:00:00.000Z", "submissions_open_at"=>"2018-01-01T00:00:00.000Z", "title"=>"Large Grant", "total_amount"=>2000, "updated_at"=>"2018-01-15T00:18:43.000Z"})
 
-  Grant.create({"created_at"=>"2018-01-14T23:20:56.000Z", "submission_max"=>nil, "submission_min"=>nil, "submissions_close_at"=>"2018-03-31T00:00:00.000Z", "submissions_open_at"=>"2018-01-01T00:00:00.000Z", "title"=>"Effigy Grant", "total_amount"=>3000, "updated_at"=>"2018-01-14T23:20:56.000Z"})
+  Grant.create({"created_at"=>"2018-01-15T00:18:43.000Z", "submission_max"=>nil, "submission_min"=>nil, "submissions_close_at"=>"2018-03-31T00:00:00.000Z", "submissions_open_at"=>"2018-01-01T00:00:00.000Z", "title"=>"Effigy Grant", "total_amount"=>3000, "updated_at"=>"2018-01-15T00:18:43.000Z"})
 
-  Grant.create({"created_at"=>"2018-01-14T23:20:56.000Z", "submission_max"=>nil, "submission_min"=>nil, "submissions_close_at"=>"2018-03-31T00:00:00.000Z", "submissions_open_at"=>"2018-01-01T00:00:00.000Z", "title"=>"Temple Grant", "total_amount"=>3000, "updated_at"=>"2018-01-14T23:20:56.000Z"})
+  Grant.create({"created_at"=>"2018-01-15T00:18:43.000Z", "submission_max"=>nil, "submission_min"=>nil, "submissions_close_at"=>"2018-03-31T00:00:00.000Z", "submissions_open_at"=>"2018-01-01T00:00:00.000Z", "title"=>"Temple Grant", "total_amount"=>3000, "updated_at"=>"2018-01-15T00:18:43.000Z"})
 end
 
-SeedMigration::Migrator.bootstrap(20180110053346)
+SeedMigration::Migrator.bootstrap(20180114234610)
