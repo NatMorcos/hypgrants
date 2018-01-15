@@ -1,12 +1,15 @@
 class SubmissionsController < ApplicationController
 
+  before_action :verify_artist, except: :index
+  before_action :verify_admin, only: :index
+
   def index
     @submissions = Submission.all
   end
 
   def show
-    #TODO: protect this
     @submission = Submission.find(params[:id])
+    redirect_to errors_forbidden_path if @submission.user_id != current_user.id
   end   
 
   def pre_registration_info
@@ -25,7 +28,6 @@ class SubmissionsController < ApplicationController
     else
       render :new
     end
-    # render plain: params[:article].inspect
   end
 
   private

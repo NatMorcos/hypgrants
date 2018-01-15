@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'errors/forbidden'
+
   # get 'grants/new'
 
   # get 'grants/create'
