@@ -5,7 +5,45 @@
 / = form_with scope: :submission, local: true do |f|
 /   = f.label
 / = simple_form_for @submission,  html: { class: 'form-horizontal' }) do |f|
-= simple_form_for @submission, url: submissions_path do |f|
-  = f.input :title, label: "Title, please"
-  = f.input :data, as: :text
-  = f.button :submit
+= simple_form_for @artist_submission_form, url: submissions_path do |f|
+  Text field input example
+  %br
+  = f.input :title, label: "Project Title, please"
+  
+  Text area long form input example
+  %br
+  - #TODO: description word limit?
+  = f.input :description, as: :text, label: "Project Description"
+
+  %br
+  Collection of checkboxes (multiple answers)
+  %br
+  = f.collection_check_boxes :for_grant, @artist_submission_form.grant_options, :first, :last, label: "Which grant are you applying for? You may select more than one"
+
+  %br
+  Boolean Checkbox
+  %br
+  = f.input :includes_flames, as: :boolean, label: "Project includes flame effects or burning art?"
+
+  %br
+  Boolean Radio Buttons
+  %br
+  = f.input :power, as: :radio_buttons, label: "Does your project require power?"
+
+  %br
+  Custom Radio Buttons
+  %br
+  = f.input :volunteers, as: :radio_buttons, collection: @artist_submission_form.volunteer_options, label: "Do you require volunteers?"
+  / Conditional Radio button, only shows if answer above is true
+  / %br
+  / TODO
+  / %br
+
+  %br
+  Date Fields example
+  %br
+  = f.input :setup_at, as: :date, label: "When do you plan to setup?"
+
+
+  %hr
+  = f.button :submit, "Submit"

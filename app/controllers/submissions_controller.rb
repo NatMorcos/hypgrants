@@ -17,13 +17,22 @@ class SubmissionsController < ApplicationController
   end
 
   def new
-    @submission = Submission.new
+    # @submission = Submission.new
+    @artist_submission_form = ::ArtistSubmissionForm.new
   end
 
   def create
-    @submission = Submission.new(submission_params)
+    # @submission = Submission.new(submission_params)
+    @artist_submission_form = ::ArtistSubmissionForm.new
+    binding.pry
 
-    if @submission.save
+    @artist_submission_form.prepare_params(
+      params: params[:artist_submission_form],
+      user: current_user
+    )
+
+    if @artist_submission_form.submit
+      @submission = @artist_submission_form.submission
       redirect_to @submission
     else
       render :new

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'submissions/pre_registration_info'
 
-  resources :submissions
+  resources :submissions #, only: [:create, :update, :new, :edit] 
   resources :grants
 
   devise_for :users, :controllers => { registrations: 'registrations' }
