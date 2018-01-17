@@ -1,11 +1,11 @@
 - if @signed_in
   - if @current_user.artist?
     %p hello! You're signed in as an artist.
-    %p Here are your saved submissions:
-    %ul
-      -# @current_user.submissions.each do |submission|
-      -#= submission.title #TODO: view, edit
-      %li TODO :)
+    - if @current_user.submissions.any?
+      %p You have the following submissions under way:
+      %ul
+        - @current_user.submissions.each do |submission|
+          %li = submission.title #TODO: view, edit
   - elsif @current_user.admin?
     %p hello! You're signed in as an admin.
     %p You can:
@@ -28,13 +28,13 @@
       %li= grant.title
   %br
   - if @signed_in && @current_user.artist?
-    %p
-      TODO: check that the user is confirmed
-      %br
+    - if @current_user.confirmed?
       looks like you're already signed in with an artist account. Do you want to
       = link_to "create a new submission", submissions_pre_registration_info_path
       ?
-  - else
+    - else
+      %p Woops! Looked like you haven't confirmed your account yet. Please go back to your email and confirm your artist account, then come back to start a submission :)
+  - elsif not @signed_in
     %p
       = link_to "Register as an artist", new_user_registration_path
       in order to submit an application.
