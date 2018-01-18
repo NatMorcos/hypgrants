@@ -1,0 +1,37 @@
+.auth-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+
+  .auth-form-description {
+    margin-top: 10px;
+  }
+
+  .auth-form {
+    width: 30%;
+    margin: 20px 0;
+
+    .auth-form-inputs {
+
+      .required {
+
+        abbr[title] {
+          color: red;
+          cursor: default;
+          text-decoration: none;
+          border: none;
+        }
+      }
+    }
+
+    .auth-form-actions {
+      text-align: center;
+    }
+  }
+
+  .auth-links {
+    text-align: center;
+    line-height: 1.8em;
+  }
+}
