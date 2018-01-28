@@ -10,21 +10,18 @@ class SubmissionsController < ApplicationController
   def show
     @submission = Submission.find(params[:id])
     redirect_to errors_forbidden_path if @submission.user_id != current_user.id
-  end   
+  end
 
   def pre_registration_info
     @open_grants = Grant.submissions_open
   end
 
   def new
-    # @submission = Submission.new
     @artist_submission_form = ::ArtistSubmissionForm.new
   end
 
   def create
-    # @submission = Submission.new(submission_params)
     @artist_submission_form = ::ArtistSubmissionForm.new
-    binding.pry
 
     @artist_submission_form.prepare_params(
       params: params[:artist_submission_form],
