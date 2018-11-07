@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.2.5'
+ruby '2.5.1'
 
-gem 'rails', '4.2.7.1'
+gem 'rails', '>= 5.0.2'
 
 # Front end
 gem 'sass-rails', '~> 5.0'
