@@ -19,7 +19,7 @@ gem 'simple_form'
 gem 'devise'
 
 # DB
-gem 'mysql2', '~> 0.3.18'
+gem 'mysql2', '~> 0.4'
 gem 'seed_migration'
 
 group :development do
